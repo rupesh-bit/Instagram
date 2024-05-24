@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState,useEffect } from "react"
+import { Outlet,Link } from "react-router-dom"
+import Signin from "./component/Signin"
+import { useDispatch,useSelector } from "react-redux"
+import authService from "./Appwrite/Auth"
+
+import { logout } from "./redux/data"
+import Downnav from "./pages/Downnav"
+import Sidenav from "./component/Sidenav"
 
 
-function App() {
-  const [count, setCount] = useState(0)
+export default  function App (params) {
+  const [c,setc]=useState("")
 
-  return (
-    <>
-      <div className='bg-red-800' >
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + Rupesh kumar singh</h1>
-      <div className="card ">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const user=useSelector(state=>state.auth)
+  
+
+ 
+ 
+  
+if(!user.status){return <><Signin setc={setc}/></>}
+
+return <>
+<div className="min-h-screen relative   bg-black  text-white ">
+
+      <Downnav/>
+      
+       <Sidenav/>
+
+     <div className=" absolute left-0 md:left-20 xl:left-60 min-h-screen right-0 bg-black ">
+
+     <Outlet/>
+     </div>
+</div>
+
+
+
+</>
+
+
 }
-
-export default App
