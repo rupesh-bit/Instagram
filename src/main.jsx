@@ -16,7 +16,7 @@ import Post from './pages/Post.jsx'
 
 const router =createBrowserRouter([
   {
-  path:'/Instagram/', element: <App/>,
+  path:'/', element: <App/>,
   children:[
       {path:'', element:<Home/>},
     
