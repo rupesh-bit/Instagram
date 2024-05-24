@@ -32,7 +32,7 @@ function Sidenav() {
              <img className="h-11 absolute left-[-13px] hidden xl:inline " src="ss.png"/>
           </div>
 
-           <Link to="/">
+           <Link to="/Instagram/">
             <div className="flex gap-3 items-center"><IoHome className="text-2xl" />
               <span className="hidden xl:inline">Home</span></div>
            </Link>
