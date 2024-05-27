@@ -2,25 +2,27 @@
 import {useForm} from 'react-hook-form'
 import service from '../Appwrite/posts';
 import {useSelector} from 'react-redux'
-
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Addpost(params) {
     const userData=useSelector(state=>state.auth.userData);
     const {register, handleSubmit}=useForm()
-
+       const navigate=useNavigate()
     const submit = async (data) => {
                console.log(data)
             const file = await service.uploadFile(data.image[0]);
 
             if (file) {
                 console.log(file)
+                navigate(`/Instagram/profile`);
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 
-                const dbPost = await service.createPost({ ...data, userId: userData.$id });//createPost({ ...data, userId: userData.$id });
-
-                
+                const dbPost = await service.createPost({ ...data, userId: userData.$id });//createPost({ ...data, userId: userData.$id }); 
+                if (dbPost) {
+                    
+                }             
             }
         
     };
@@ -45,7 +47,7 @@ return (<>
                    <label htmlFor='content'>
                     content  </label>
                    <input id='content' placeholder='content' 
-                   {...register('content',{required:true})}/>
+                   {...register('content')}/>
                </div>
 
                <div className=" border-zinc-700 py-3 px-5  border-[1px] rounded-full mb-1"> 

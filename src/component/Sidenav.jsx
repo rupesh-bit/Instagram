@@ -37,15 +37,15 @@ function Sidenav() {
               <span className="hidden xl:inline">Home</span></div>
            </Link>
 
-           <Link to="/profile">
+           <Link to="/Instagram/profile">
             <div className="flex gap-3 items-center"><CgProfile className="text-2xl"/>
             <span className="hidden xl:inline">Profile</span></div></Link>
-
-           <Link to="/explor">
+            
+           <Link to="/Instagram/explor">
             <div className="flex gap-3 items-center"><MdOutlineExplore className="text-2xl"/>
             <span className="hidden xl:inline">Explor</span></div></Link>
 
-           <Link to="/addpost">
+           <Link to="/Instagram/addpost">
             <div className="flex gap-3 items-center"><MdAddToPhotos className="text-2xl"/>
             <span className="hidden xl:inline">Addpost</span></div></Link>
 

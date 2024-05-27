@@ -21,7 +21,7 @@ export default function Profile(params) {
      
       if(user.posts)
         {const mypost=user.posts.filter((post)=>'"'+user.userData.$id+'"'==post.userId)
-        const my=user.posts.filter((post)=>user.userData.$id==post.userId)
+         const my=user.posts.filter((post)=>user.userData.$id==post.userId)
             my.map((m)=>mypost.push(m))
 
         //lg:w-[928px]
@@ -37,8 +37,9 @@ export default function Profile(params) {
           <div className="  w-full grid grid-cols-3 h-[188px] mb-11">
           <div className="   pr-[28px] pt-4">
             <div className="bg-red-500 h-[150px] w-[150px] mx-auto  rounded-full ">
-            <img className="object-center object-cover h-full w-full overflow-hidden rounded-full" 
-            src={service.getFilePreview(mypost[0].featuredImage)} alt={mypost[0].title}/>
+            {mypost[0]?(<img className="object-center object-cover h-full w-full overflow-hidden rounded-full" 
+            src={service.getFilePreview(mypost[0].featuredImage)}  alt={mypost[0].title}/>):null}
+            
           </div>
           </div>
       
@@ -52,8 +53,8 @@ export default function Profile(params) {
                
           </div>
           <div className="flex gap-[40px] my-[20px] leading-[18px]">
-           <div>{mypost.length}   Posts</div>
-           <div>10 followers</div>
+           <div>{mypost ? mypost.length:null}   Posts</div>
+           <div><button onClick={()=>console.log(mypost,user.posts)}>10 followers</button></div>
            <div>10 following</div>
           </div>
 
@@ -75,6 +76,7 @@ export default function Profile(params) {
           <span>gv yg</span></div>
           <div className=" flex flex-col items-center"><div className=" w-20 h-20 bg-slate-500 rounded-full"></div>
           <span>gv yg</span></div>
+          
         </div>
 
 
