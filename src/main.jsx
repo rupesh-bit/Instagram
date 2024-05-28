@@ -18,15 +18,15 @@ const router =createBrowserRouter([
   {
   path:'/', element: <App/>,
   children:[
-      {path:'Instagram/', element:<Home/>},
+      {path:'', element:<Home/>},
     
-       { path:'/Instagram/explor', element:<Explor/> },
+       { path:'/explor', element:<Explor/> },
 
-      {path:'/Instagram/profile', element:<Profile />},
+      {path:'/profile', element:<Profile />},
 
-       { path:'/Instagram/addpost', element: <Addpost />},
+       { path:'/addpost', element: <Addpost />},
 
-       { path:'/Instagram/post/:slug', element: <Post />},
+       { path:'/post/:slug', element: <Post />},
  
  
 

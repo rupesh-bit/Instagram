@@ -32,20 +32,20 @@ function Sidenav() {
              <img className="h-11 absolute left-[-13px] hidden xl:inline " src="ss.png"/>
           </div>
 
-           <Link to="/Instagram/">
+           <Link to="/">
             <div className="flex gap-3 items-center"><IoHome className="text-2xl" />
               <span className="hidden xl:inline">Home</span></div>
            </Link>
 
-           <Link to="/Instagram/profile">
+           <Link to="/profile">
             <div className="flex gap-3 items-center"><CgProfile className="text-2xl"/>
             <span className="hidden xl:inline">Profile</span></div></Link>
             
-           <Link to="/Instagram/explor">
+           <Link to="/explor">
             <div className="flex gap-3 items-center"><MdOutlineExplore className="text-2xl"/>
             <span className="hidden xl:inline">Explor</span></div></Link>
 
-           <Link to="/Instagram/addpost">
+           <Link to="/addpost">
             <div className="flex gap-3 items-center"><MdAddToPhotos className="text-2xl"/>
             <span className="hidden xl:inline">Addpost</span></div></Link>
 
