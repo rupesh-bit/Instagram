@@ -15,13 +15,13 @@ export default function Addpost(params) {
 
             if (file) {
                 console.log(file)
-                navigate(`/Instagram/profile`);
+                
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 
                 const dbPost = await service.createPost({ ...data, userId: userData.$id });//createPost({ ...data, userId: userData.$id }); 
                 if (dbPost) {
-                    
+                    navigate(`/post/${dbPost.$id}`);
                 }             
             }
         
