@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { useEffect } from "react";
 import service from "../Appwrite/posts";
 import { storepost } from "../redux/data";
+import { rtest } from "../redux/data";
 
 export default function Profile(params) {
     const user=useSelector(state=>state.auth);
@@ -14,21 +15,25 @@ export default function Profile(params) {
            {if(posts)
           {
               let post=posts.documents
+              const mypost=post.filter((p)=>'"'+user.userData.$id+'"'==p.userId)
+         const my=post.filter((p)=>user.userData.$id==p.userId)
+            my.map((m)=>mypost.push(m));
+            dispatch(rtest({mypost}))
               dispatch(storepost({post}))// dispatch(login({userData}))
           }})
        }
+       
       },[])
      
       if(user.posts)
-        {const mypost=user.posts.filter((post)=>'"'+user.userData.$id+'"'==post.userId)
-         const my=user.posts.filter((post)=>user.userData.$id==post.userId)
-            my.map((m)=>mypost.push(m))
+        {const mypost=user.userpost
+
 
         //lg:w-[928px]
 
     return (<>
   <div className="w-full pt-4 min-h-screen bg-black">
-       <button onClick={()=>console.log(user.userData)}>
+       <button onClick={()=>console.log(user.userpost)}>
         profile</button>
     <div className="w-full lg:w-11/12 xl:w-9/12  overflow-x-hidden  mx-auto">
 

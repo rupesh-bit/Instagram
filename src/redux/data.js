@@ -7,7 +7,9 @@ import { createSlice ,configureStore} from "@reduxjs/toolkit";
 const initialState = {
     status : false,
     userData: null,
-    posts:null
+    posts:null,
+    userpost:null
+
 }
 
 const authSlice = createSlice({
@@ -23,11 +25,13 @@ const authSlice = createSlice({
         logout: (state) => {
             state.status = false;
             state.userData = null;
+            state.userpost=null;
         },
         
         rtest: (state, action) => {
-                  console.log(action.payload);
-                console.log(state.userData)
+            state.userpost= action.payload.mypost; 
+                
+            
         },
 
         storepost:(state,action)=>{
