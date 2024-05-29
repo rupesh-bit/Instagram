@@ -27,7 +27,7 @@ return <>
       
        <Sidenav/>
 
-     <div className=" absolute left-0 md:left-20 xl:left-60 min-h-screen right-0 bg-black ">
+     <div className=" absolute left-0 md:left-20 xl:left-60 min-h-screen right-0 overflow-x-hidden bg-black ">
 
      <Outlet/>
      </div>

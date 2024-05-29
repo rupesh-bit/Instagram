@@ -33,15 +33,14 @@ export default function Profile(params) {
 
     return (<>
   <div className="w-full pt-4 min-h-screen bg-black">
-       <button onClick={()=>console.log(user.userpost)}>
-        profile</button>
+       
     <div className="w-full lg:w-11/12 xl:w-9/12  overflow-x-hidden  mx-auto">
 
 
         <div className="h-[406px]   ">
           <div className="  w-full grid grid-cols-3 h-[188px] mb-11">
-          <div className="   pr-[28px] pt-4">
-            <div className="bg-red-500 h-[150px] w-[150px] mx-auto  rounded-full ">
+          <div className="   md:pr-[28px] px-1 pt-4">
+            <div className="bg-red-500 md:h-[150px] md:w-[150px] h-32 mx-auto  rounded-full ">
             {mypost[0]?(<img className="object-center object-cover h-full w-full overflow-hidden rounded-full" 
             src={service.getFilePreview(mypost[0].featuredImage)}  alt={mypost[0].title}/>):null}
             
@@ -59,7 +58,7 @@ export default function Profile(params) {
           </div>
           <div className="flex gap-[40px] my-[20px] leading-[18px]">
            <div>{mypost ? mypost.length:null}   Posts</div>
-           <div><button onClick={()=>console.log(mypost,user.posts)}>10 followers</button></div>
+           <div><button onClick={()=>console.log(mypost,user.posts,user.userpost)}>10 followers</button></div>
            <div>10 following</div>
           </div>
 
@@ -94,11 +93,12 @@ export default function Profile(params) {
         </div>)})
         :null}
       </div>
-        <div className="h-12 md:hidden bg-slate-100">
-        </div>
+       
        
     </div>
 </div>
+ <div className="h-12 md:hidden bg-slate-100">
+        </div>
     </>)
     
    }

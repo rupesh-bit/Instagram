@@ -38,8 +38,8 @@ const deletePost = () => {
  
   return post && (
     <div>
-      <h1 className='mx-auto w-40'>{post.title}</h1>
-      <div onClick={()=>console.log(Boolean(auther))}>mfkmf</div>
+      <h1 className='mx-auto w-20'>{post.title}</h1>
+      
        <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
@@ -48,7 +48,9 @@ const deletePost = () => {
 
         
            
-          {auther[0]&& (<div className='mx-auto w-40' onClick={deletePost}><span className='  px-3 py-1 bg-red-500 rounded-md'>Delete</span></div>)}  
+          {auther[0]&& (<div className='mx-auto w-20' onClick={deletePost}>
+            <span className='  px-3 py-1 bg-red-500 rounded-md mb-3'>Delete</span></div>)} 
+            <div className="h-12 md:hidden bg-slate-100 mt-2"></div> 
         
 
 

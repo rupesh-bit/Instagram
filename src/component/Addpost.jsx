@@ -36,21 +36,21 @@ return (<>
             Addpost</h1>
 
             <form className='mx-auto ' onSubmit={handleSubmit(submit)}>
-               <div className=" border-zinc-700 py-3 px-5  border-[1px] rounded-full mb-1"> 
+               <div className=" border-zinc-700 py-3 px-5 w-10/12 md:w-full  border-[1px] rounded-full mb-1"> 
                    <label htmlFor='title'>
                     Title  </label>
                     <input id='title' placeholder='Title' 
                     {...register('title',{required:true})}/>
                </div>
 
-               <div className=" border-zinc-700 py-3 px-5  border-[1px] rounded-full mb-1"> 
+               <div className=" border-zinc-700 py-3 px-5 w-10/12 md:w-full border-[1px] rounded-full mb-1"> 
                    <label htmlFor='content'>
                     content  </label>
                    <input id='content' placeholder='content' 
                    {...register('content')}/>
                </div>
 
-               <div className=" border-zinc-700 py-3 px-5  border-[1px] rounded-full mb-1"> 
+               <div className=" border-zinc-700 py-3 px-5 w-10/12 md:w-full border-[1px] rounded-full mb-1"> 
                     <label htmlFor='image'>
                         Image</label>
                     <input id='image' type='file' 
@@ -58,7 +58,7 @@ return (<>
                     placeholder='Title' {...register('image',{required:true})}/>
                </div>
 
-                 <div className=" border-zinc-700 py-3 px-5  border-[1px] rounded-full mb-6"> 
+                 <div className=" border-zinc-700 py-3 px-5 w-10/12 md:w-full border-[1px] rounded-full mb-6"> 
                      <label htmlFor='st'>
                         status</label>
                      <select id='st'  {...register('status',{required:true})} >
