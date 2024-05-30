@@ -48,16 +48,25 @@ if(!loding){return (
 return (
 <div className="w-full flex items-center  justify-between h-screen bg-zinc-400">
  <div className="w-1/2 h-full bg-zinc-800 overflow-hidden whitespace-nowrap hidden lg:block ">
-     <div className='w-screen h-full flex  justify-start items-center'>
+     <div className='w-screen h-full flex  justify-start items-center relative'> 
+          <div className='absolute z-10 top-48 left-80 '> <img src='ss.png'/></div>
             <motion.div initial={{x:'-100%'}} animate={{x:"0"}} transition={{repeat:Infinity, ease:"linear", duration:20}} 
-            className='h-1/3 w-1/2 bg-slate-300  border-orange-600 border-2' >
-             <div className=' '> me ho masiha ha ha ha ha ha ha ah aha ah ah aha ahha hha hahaha ha h </div>
+            className='h-1/2 w-1/2 bg-black overflow-hidden pl-11' >
+             <div className='h-4/5 mt-24 flex w-full justify-between '>
+               <img className='object-cover  h-64' src='s.jpg'/>
+             <img  className='object-cover h-64' src='s2.jpg'/>
+             <img  className='object-cover h-64' src='s3.jpg'/> 
+             </div>
               </motion.div>
 
               <motion.div initial={{x:'-100%'}} animate={{x:"0"}} transition={{repeat:Infinity, ease:"linear", duration:20}}
-               className='h-1/3 w-1/2 bg-slate-300  border-orange-600 border-2 ' >
-             <div className=' '>me ho masiha ha ha ha ha ha ha ah aha ah ah aha ahha hha hahaha ha h </div>
+               className='h-1/2 w-1/2 bg-black overflow-hidden  ' >
+             <div className='h-4/5 mt-24 flex w-full justify-between pl-11 '>
+               <img className='object-cover  h-64' src='s.jpg'/>
+             <img  className='object-cover h-64' src='s2.jpg'/>
+             <img  className='object-cover h-64' src='s3.jpg'/> </div>
               </motion.div>
+          
       </div>
  
  
