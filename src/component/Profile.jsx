@@ -57,7 +57,7 @@ export default function Profile(params) {
                
           </div>
           <div className="flex gap-[40px] my-[20px] leading-[18px]">
-           <div>{mypost ? mypost.length:null}   Posts</div>
+           <div>{mypost[0] ? mypost.length:0}   Posts</div>
            <div><button onClick={()=>console.log(mypost,user.posts,user.userpost)}>10 followers</button></div>
            <div>10 following</div>
           </div>
