@@ -2,10 +2,13 @@ import Photo from "./Photo";
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect } from "react";
 import service from "../Appwrite/posts";
-import { storepost } from "../redux/data";
+import { logout, storepost } from "../redux/data";
 import { rtest } from "../redux/data";
+import  AuthService  from "../Appwrite/Auth";
+
 
 export default function Profile(params) {
+  
     const user=useSelector(state=>state.auth);
    const dispatch=useDispatch()
     useEffect(()=>{
@@ -24,12 +27,17 @@ export default function Profile(params) {
        }
        
       },[])
-     
+      
+     function handlelogout(){
+       AuthService.logout()
+       
+        
+          dispatch(logout()); 
+          alert('logged out successfully !')
+     }
+
       if(user.posts)
         {const mypost=user.userpost
-
-
-        //lg:w-[928px]
 
     return (<>
   <div className="w-full pt-4 min-h-screen bg-black">
@@ -49,7 +57,8 @@ export default function Profile(params) {
       
          <div className="col-span-2   ">
            <div className="flex text-[20px]"> {user.userData.name}
-            <span className="bg-gray-700 rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Edit profiles</span>
+            <span className="bg-gray-700 hidden md:inline rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Edit profiles</span>
+            <span onClick={handlelogout} className="bg-gray-700  md:hidden rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Log out</span>
           
             <svg aria-label="Options" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" 
             role="img" viewBox="0 0 24 24" width="24"><title>Options</title><circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
