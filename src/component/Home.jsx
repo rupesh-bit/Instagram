@@ -12,6 +12,7 @@ export default function Home(params) {
     const dispatch=useDispatch()
       const posts=user.posts
      useEffect(()=>{
+      
        if (!user.posts){
            service.getPosts()
           .then((posts)=>
