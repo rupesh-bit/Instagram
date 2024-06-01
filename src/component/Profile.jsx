@@ -49,7 +49,7 @@ export default function Profile(params) {
       
          <div className="col-span-2   ">
            <div className="flex text-[20px]"> {user.userData.name}
-            <span className="bg-gray-700 rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Edit profile</span>
+            <span className="bg-gray-700 rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Edit profiles</span>
           
             <svg aria-label="Options" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" 
             role="img" viewBox="0 0 24 24" width="24"><title>Options</title><circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
