@@ -5,10 +5,13 @@ import {motion} from 'framer-motion'
 import { useEffect } from 'react';
 import {useDispatch} from 'react-redux'
 import {login,logout} from "../redux/data"
+import { useNavigate } from 'react-router-dom';
 
 
 
-export default function Signin({setc}) {
+export default function Signin() {
+  
+  const navigate= useNavigate()
      const [loding,setloding]=useState(false)
 const { register,handleSubmit}=useForm();
  const dispatch=useDispatch()
@@ -17,7 +20,7 @@ useEffect(()=>{
      authService.getCurrentUser()
      .then((userData)=>
         {if(userData)
-          {setc(userData)
+          {
             dispatch(login({userData}))}
            
             else{setloding(true)
@@ -34,9 +37,11 @@ useEffect(()=>{
     
     
      const se=await  authService.login(da);
-     if(se){ ;
+     if(se){ 
      const userData= await authService.getCurrentUser()
-          setc(userData);dispatch(login({userData}))}
+          dispatch(login({userData}));
+          navigate('/')
+        }
   }
 
 if(!loding){return (
@@ -51,8 +56,8 @@ return (
      <div className='w-screen h-full flex  justify-start items-center relative'> 
           <div className='absolute z-10 top-48 left-80 '> <img src='ss.png'/></div>
             <motion.div initial={{x:'-100%'}} animate={{x:"0"}} transition={{repeat:Infinity, ease:"linear", duration:20}} 
-            className='h-1/2 w-1/2 bg-black overflow-hidden pl-11' >
-             <div className='h-4/5 mt-24 flex w-full justify-between '>
+            className='h-1/2 w-1/2 bg-black border-orange-600 border-y-2 overflow-hidden pl-11' >
+             <div className='h-4/5 mt-20 flex w-full justify-between '>
                <img className='object-cover  h-64' src='s.jpg'/>
              <img  className='object-cover h-64' src='s2.jpg'/>
              <img  className='object-cover h-64' src='s3.jpg'/> 
@@ -60,8 +65,8 @@ return (
               </motion.div>
 
               <motion.div initial={{x:'-100%'}} animate={{x:"0"}} transition={{repeat:Infinity, ease:"linear", duration:20}}
-               className='h-1/2 w-1/2 bg-black overflow-hidden  ' >
-             <div className='h-4/5 mt-24 flex w-full justify-between pl-11 '>
+               className='h-1/2 border-orange-600 border-y-2 w-1/2 bg-black overflow-hidden  ' >
+             <div className='h-4/5 mt-20 flex w-full justify-between pl-11 '>
                <img className='object-cover  h-64' src='s.jpg'/>
              <img  className='object-cover h-64' src='s2.jpg'/>
              <img  className='object-cover h-64' src='s3.jpg'/> </div>
@@ -75,13 +80,23 @@ return (
 
  <div className="lg:w-1/2 w-full h-full bg-zinc-800 lg:ml-[1px] flex items-center justify-center ">
 
-  <div className="w-4/5 border-orange-600 border-2 bg-zinc-400 lg:h-1/2 rounded-lg flex items-center justify-center"> 
+  <div className="sm:w-4/5 w-full border-orange-600 border-2 bg-zinc-400 lg:h-1/2 rounded-lg flex items-center justify-center"> 
 
     <div className='w-2/3 justify-center flex items-center flex-col '>
 
       <h1 className="text-4xl mb-8 mt-2" >Log in</h1>
   
-      <form  className='mx-auto py-3'>
+      <form  className='mx-auto py-3' onSubmit={handleSubmit(async(da) => {
+                 try {
+                  const userData = await authService.createAccount({...da})
+                  if (userData) {
+                      const userDat = await authService.getCurrentUser()
+                       dispatch(login(userDat));
+                       alert('Account created and logged in successfully!')    
+                  }
+              } catch (error) {
+                  setError(error.message)
+              }})}>
            <div className=" border-zinc-700 py-2 lg:py-3 px-5  border-[1px] rounded-full mb-1"> 
               <label className='ml-4' htmlFor='email'>Email:</label>
              <input type="email" id='email' placeholder="Email" {...register("email",{required:true})} />
@@ -101,12 +116,7 @@ return (
            </button></div>
 
            <div className='w-full flex justify-center sm:inline'><button className='mx-auto border-orange-600 border-2 rounded-full px-5 py-4 text-xl'
-             type="button"
-             onClick={handleSubmit(async(da) => {
-                 await authService.createAccount({...da});
-                login(da);})
-             }
-           >
+             type="submit">
              Register
            </button></div>
       </form>
@@ -119,3 +129,6 @@ return (
 
 
 }
+
+// await authService.createAccount({...da});
+   //             login(da)

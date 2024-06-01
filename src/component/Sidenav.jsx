@@ -4,20 +4,21 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineExplore } from "react-icons/md";
 import { MdAddToPhotos } from "react-icons/md";
 import { IoLogOutOutline } from "react-icons/io5";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useDispatch,useSelector } from "react-redux"
 import authService from "../Appwrite/Auth"
 import { logout } from "../redux/data"
 
 
 function Sidenav() {
-    
+     const navigate= useNavigate()
     const dispatch =useDispatch()
+
     function handellogout() {
-    
         authService.logout();
         
           dispatch(logout()); 
+          alert('logged out successfully !')
       }
     
   return (

@@ -10,7 +10,7 @@ import Sidenav from "./component/Sidenav"
 
 
 export default  function App (params) {
-  const [c,setc]=useState("")
+  
 
   const user=useSelector(state=>state.auth)
   
@@ -18,7 +18,7 @@ export default  function App (params) {
  
  
   
-if(!user.status){return <><Signin setc={setc}/></>}
+if(!user.status){return <><Signin /></>}
 
 return <>
 <div className="min-h-screen relative   bg-black  text-white ">
