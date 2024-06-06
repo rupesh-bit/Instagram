@@ -93,7 +93,6 @@ return (
                       const userDat = await authService.getCurrentUser()
                        dispatch(login(userDat));
                        alert('Account created and logged in successfully!')  
-                  
                   }
               } catch (error) {
                   setError(error.message)

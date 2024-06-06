@@ -36,8 +36,9 @@ export default function Profile(params) {
           alert('logged out successfully !')
      }
 
-      if(user.posts)
-        {const mypost=user.userpost
+      if(user.userpost)
+        {
+           const mypost=user.userpost
 
     return (<>
   <div className="w-full pt-4 min-h-screen bg-black">
@@ -112,7 +113,7 @@ export default function Profile(params) {
     
    }
    
-   else return<><div></div></>
+   else return<><div className="text-3xl font-medium">reload</div></>
   }
 
 
