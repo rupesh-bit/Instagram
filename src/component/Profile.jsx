@@ -22,7 +22,7 @@ export default function Profile(params) {
          const my=post.filter((p)=>user.userData.$id==p.userId)
             my.map((m)=>mypost.push(m));
             dispatch(rtest({mypost}))
-              dispatch(storepost({post}))// dispatch(login({userData}))
+              dispatch(storepost({post})) // dispatch(login({userData}))
           }})
        }
        
@@ -113,11 +113,8 @@ export default function Profile(params) {
     
    }
    
-   else return<><div className="text-3xl font-medium">reload</div></>
+   else return<><div className="text-3xl font-medium flex justify-center items-center">reload</div></>
   }
-
-
-
 
 import React from 'react'
 
