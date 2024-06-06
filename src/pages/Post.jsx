@@ -50,7 +50,7 @@ const deletePost = () => {
            
           {auther[0]&& (<div className='mx-auto w-20' onClick={deletePost}>
             <span className='  px-3 py-1 bg-red-500 rounded-md mb-3'>Delete</span></div>)} 
-            <div className="h-12 md:hidden bg-slate-100 mt-2"></div> 
+            <div className="h-12 md:hidden bg-black mt-2"></div> 
         
 
 

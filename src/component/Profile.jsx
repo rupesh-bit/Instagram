@@ -27,7 +27,7 @@ export default function Profile(params) {
        }
        
       },[])
-      
+
      function handlelogout(){
        AuthService.logout()
        
@@ -57,7 +57,7 @@ export default function Profile(params) {
       
          <div className="col-span-2   ">
            <div className="flex text-[20px]"> {user.userData.name}
-            <span className="bg-gray-700 hidden md:inline rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Edit profiles</span>
+            <span className="bg-gray-700 hidden md:inline rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Edit profile</span>
             <span onClick={handlelogout} className="bg-gray-700  md:hidden rounded-lg px-4 py-1 ml-8 mr-3 text-[14px] font-semibold"> Log out</span>
           
             <svg aria-label="Options" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" 
