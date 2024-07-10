@@ -6,7 +6,7 @@ function Lphoto({featuredImage,title}) {
 
   return (
     <div className=''>
-        <div className='w-full flex items-center mx-2 mb-3 mt-6'>
+        <div className='w-full flex items-center mx-2 mb-3 pt-6'>
             <div className='bg-red-600 h-9 w-9 rounded-full mr-3'></div>
         <span className='text-sm font-semibold '>profilename</span>
 
