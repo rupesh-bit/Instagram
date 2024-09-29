@@ -128,7 +128,7 @@ return (
            </button></div>
            <div className='w-full  flex justify-center sm:inline'><button className='mx-auto border-orange-600 border-2 rounded-full px-5 py-4 text-xl'
                         type="submit">
-                         Register register
+                         Register
                        </button></div>
           </div>
 
