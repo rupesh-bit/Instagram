@@ -21,4 +21,5 @@ VITE_APPWRITE_BUCKET_ID='<--your BUCKET ID-->'
 if everything done well ,you able to register and able uplode photo into your account .
 and in this process you can learn a lot about Appwrite which is backend as a service(Baas) app .
 
+  -----<>------<>------<>-------
 
