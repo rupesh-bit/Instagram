@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function Signin() {
-  //jhjjbjbjhhjbjb
+  
   const navigate= useNavigate()
      const [loding,setloding]=useState(false)
 const { register,handleSubmit}=useForm();
