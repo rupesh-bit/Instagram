@@ -25,8 +25,8 @@ If you don't have an appwrite account then
 
 2. create an Appwrite account 
 3. go to instagram-->src-->conf-->conf.js   look at VITE_APPWRITE_URL and other three option
-4. make a project , database , collection ,bucket in Appwrite webstie
-5. create a .emv file in instagram folder and copy this paste it there
+4. make a project , database , collection ,bucket in Appwrite website
+5. create a .emv file in instagram folder and copy this and paste it there
 
 ```bash
 VITE_APPWRITE_URL='https://cloud.appwrite.io/v1'
