@@ -4,7 +4,7 @@ how to run this instagram app?
 1--git clone <--project link-->   (run)
 2--npm i (run)
 3--npm run dev (run)
-lfvf             
+            
 Now you will see the login page, but it will not register until you have an Appwrite(open source) account 
 If you don't have an appwrite account then
 4--create an Appwrite account 
