@@ -23,3 +23,48 @@ and in this process you can learn a lot about Appwrite which is backend as a ser
 
   -----<>------<>------<>-------
 
+# Instagram Clone - MERN Stack
+
+This project is an Instagram clone built using the MERN stack (MongoDB, Express, React, Node.js). It allows users to sign up, log in, create posts, like and comment on posts, and follow other users.
+
+## Features
+- User Authentication
+- Image Posts with Captions
+- Like and Comment on Posts
+- Follow and Unfollow Users
+
+## Tech Stack
+- React
+- Node.js
+- Express
+- MongoDB
+
+## Prerequisites
+- Node.js installed on your machine
+- MongoDB set up locally or using MongoDB Atlas
+
+## Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/instagram-clone.git
+    ```
+
+2. Install backend dependencies:
+    ```bash
+    cd backend
+    npm install
+    ```
+
+3. Install frontend dependencies:
+    ```bash
+    cd frontend
+    npm install
+    ```
+
+4. Start the application:
+    ```bash
+    npm run dev
+    ```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
