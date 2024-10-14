@@ -65,10 +65,10 @@ return (
 <div className="w-full flex items-center  justify-between h-screen bg-zinc-400">
  <div className="w-1/2 h-full bg-zinc-800 overflow-hidden whitespace-nowrap hidden lg:block ">
      <div className='w-screen h-full flex  justify-start items-center relative'> 
-          <div className='absolute z-10 top-48 left-80 '> <img src='ss.png'/></div>
+          <div className='absolute z-10 top-48 left-80 '> </div>
             <motion.div initial={{x:'-100%'}} animate={{x:"0"}} transition={{repeat:Infinity, ease:"linear", duration:20}} 
-            className='h-1/2 w-1/2 bg-black border-orange-600 border-y-2 overflow-hidden pl-11' >
-             <div className='h-4/5 mt-20 flex w-full justify-between '>
+            className='h-1/2 w-1/2 bg-black border-orange-600 border-y-2 overflow-hidden pl-11' ><img className='mt-3 mx-auto' src='ss.png'/>
+             <div className='h-4/5 mt-5 flex w-full justify-between '>
                <img className='object-cover  h-64' src='s.jpg'/>
              <img  className='object-cover h-64' src='s2.jpg'/>
              <img  className='object-cover h-64' src='s3.jpg'/> 
@@ -76,8 +76,8 @@ return (
               </motion.div>
 
               <motion.div initial={{x:'-100%'}} animate={{x:"0"}} transition={{repeat:Infinity, ease:"linear", duration:20}}
-               className='h-1/2 border-orange-600 border-y-2 w-1/2 bg-black overflow-hidden  ' >
-             <div className='h-4/5 mt-20 flex w-full justify-between pl-11 '>
+               className='h-1/2 border-orange-600 border-y-2 w-1/2 bg-black overflow-hidden  ' ><img className='mt-3 mx-auto' src='ss.png'/>
+             <div className='h-4/5 mt-5 flex w-full justify-between pl-11 '>
                <img className='object-cover  h-64' src='s.jpg'/>
              <img  className='object-cover h-64' src='s2.jpg'/>
              <img  className='object-cover h-64' src='s3.jpg'/> </div>
