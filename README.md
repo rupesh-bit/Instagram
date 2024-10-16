@@ -36,7 +36,7 @@ VITE_APPWRITE_COLLECTION_ID= '<--your collection ID-->'
 VITE_APPWRITE_BUCKET_ID='<--your BUCKET ID-->'
 ```
 
-## if everything done well ,you able to register and able uplode photo into your account .
+## if everything done well ,you will be able to register and  uplode photo into your account .
 ## and in this process you can learn a lot about Appwrite which is backend as a service(Baas) app .
 
 ## Prerequisites
