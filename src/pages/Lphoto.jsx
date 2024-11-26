@@ -37,3 +37,5 @@ function Lphoto({featuredImage,title,$id}) {
 }
 
 export default Lphoto
+
+//jnngnjjnf
